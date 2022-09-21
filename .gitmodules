@@ -1,0 +1,19 @@
+[submodule "cilroy"]
+	path = cilroy
+    url = https://github.com/kilroybot/cilroy.git
+    update = rebase
+
+[submodule "kilroy-face-discord"]
+	path = kilroy-face-discord
+    url = https://github.com/kilroybot/kilroy-face-discord.git
+    update = rebase
+
+[submodule "kilroy-face-twitter"]
+	path = kilroy-face-twitter
+    url = https://github.com/kilroybot/kilroy-face-twitter.git
+    update = rebase
+
+[submodule "kilroy-module-huggingface"]
+	path = kilroy-module-huggingface
+    url = https://github.com/kilroybot/kilroy-module-huggingface.git
+    update = rebase

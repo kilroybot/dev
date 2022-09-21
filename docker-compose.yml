@@ -1,0 +1,39 @@
+services:
+  cilroy:
+    extends:
+      file: ./cilroy.yml
+      service: cilroy
+    image: "${CILROY_IMAGE:-kilroybot/cilroy}"
+    build: "${CILROY_PATH:-./cilroy}"
+    depends_on:
+      - kilroy-face-discord
+      - kilroy-face-twitter
+      - kilroy-module-huggingface
+
+  kilroy-face-discord:
+    extends:
+      file: ./kilroy-face-discord.yml
+      service: kilroy-face-discord
+    image: "${KILROY_FACE_DISCORD_IMAGE:-kilroybot/kilroy-face-discord}"
+    build: "${KILROY_FACE_DISCORD_PATH:-./kilroy-face-discord}"
+
+  kilroy-face-twitter:
+    extends:
+      file: ./kilroy-face-twitter.yml
+      service: kilroy-face-twitter
+    image: "${KILROY_FACE_TWITTER_IMAGE:-kilroybot/kilroy-face-twitter}"
+    build: "${KILROY_FACE_TWITTER_PATH:-./kilroy-face-twitter}"
+
+  kilroy-module-huggingface:
+    extends:
+      file: ./kilroy-module-huggingface.yml
+      service: kilroy-module-huggingface
+    image: "${KILROY_MODULE_HUGGINGFACE_IMAGE:-kilroybot/kilroy-module-huggingface}"
+    build: "${KILROY_MODULE_HUGGINGFACE_PATH:-./kilroy-module-huggingface}"
+
+volumes:
+  cilroy:
+  kilroy-face-discord:
+  kilroy-face-twitter:
+  kilroy-module-huggingface:
+  huggingface-cache:

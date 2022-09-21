@@ -1,0 +1,13 @@
+services:
+  kilroy-module-huggingface:
+    image: "${KILROY_MODULE_HUGGINGFACE_IMAGE:-ghcr.io/kilroybot/kilroy-module-huggingface}:${KILROY_MODULE_HUGGINGFACE_TAG:-latest}"
+    ports:
+      - "${KILROY_MODULE_HUGGINGFACE_PUBLISHED_PORT:-11000}:11000"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    environment:
+      - "HF_HOME=/etc/huggingface/"
+      - "KILROY_MODULE_HUGGINGFACE_STATE_DIRECTORY=${KILROY_MODULE_HUGGINGFACE_STATE_DIRECTORY:-/etc/kilroy-module-huggingface}"
+    volumes:
+      - kilroy-module-huggingface:/etc/kilroy-module-huggingface
+      - huggingface-cache:/etc/huggingface/

@@ -1,0 +1,13 @@
+services:
+  kilroy-face-discord:
+    image: "${KILROY_FACE_DISCORD_IMAGE:-ghcr.io/kilroybot/kilroy-face-discord}:${KILROY_FACE_DISCORD_TAG:-latest}"
+    ports:
+      - "${KILROY_FACE_DISCORD_PUBLISHED_PORT:-10000}:10000"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    environment:
+      - "KILROY_FACE_DISCORD_STATE_DIRECTORY=${KILROY_FACE_DISCORD_STATE_DIRECTORY:-/etc/kilroy-face-discord}"
+      - "KILROY_FACE_DISCORD_FACE__TOKEN=${KILROY_FACE_DISCORD_FACE__TOKEN}"
+      - "KILROY_FACE_DISCORD_FACE__CHANNEL_ID=${KILROY_FACE_DISCORD_FACE__CHANNEL_ID}"
+    volumes:
+      - kilroy-face-discord:/etc/kilroy-face-discord

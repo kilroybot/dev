@@ -1,0 +1,15 @@
+services:
+  kilroy-face-twitter:
+    image: "${KILROY_FACE_TWITTER_IMAGE:-ghcr.io/kilroybot/kilroy-face-twitter}:${KILROY_FACE_TWITTER_TAG:-latest}"
+    ports:
+      - "${KILROY_FACE_TWITTER_PUBLISHED_PORT:-10001}:10001"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    environment:
+      - "KILROY_FACE_TWITTER_STATE_DIRECTORY=${KILROY_FACE_TWITTER_STATE_DIRECTORY:-/etc/kilroy-face-twitter}"
+      - "KILROY_FACE_TWITTER_FACE__CONSUMER_KEY=${KILROY_FACE_TWITTER_FACE__CONSUMER_KEY}"
+      - "KILROY_FACE_TWITTER_FACE__CONSUMER_SECRET=${KILROY_FACE_TWITTER_FACE__CONSUMER_SECRET}"
+      - "KILROY_FACE_TWITTER_FACE__ACCESS_TOKEN=${KILROY_FACE_TWITTER_FACE__ACCESS_TOKEN}"
+      - "KILROY_FACE_TWITTER_FACE__ACCESS_TOKEN_SECRET=${KILROY_FACE_TWITTER_FACE__ACCESS_TOKEN_SECRET}"
+    volumes:
+      - kilroy-face-twitter:/etc/kilroy-face-twitter

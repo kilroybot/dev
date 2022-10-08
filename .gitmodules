@@ -1,3 +1,13 @@
+[submodule "kilroyweb"]
+	path = kilroyweb
+    url = https://github.com/kilroybot/kilroyweb.git
+    update = rebase
+
+[submodule "grpc-web-proxy"]
+	path = grpc-web-proxy
+    url = https://github.com/kilroybot/grpc-web-proxy.git
+    update = rebase
+
 [submodule "cilroy"]
 	path = cilroy
     url = https://github.com/kilroybot/cilroy.git
@@ -16,4 +26,14 @@
 [submodule "kilroy-module-huggingface"]
 	path = kilroy-module-huggingface
     url = https://github.com/kilroybot/kilroy-module-huggingface.git
+    update = rebase
+
+[submodule "proto"]
+	path = proto
+    url = https://github.com/kilroybot/proto.git
+    update = rebase
+
+[submodule "assets"]
+	path = assets
+    url = https://github.com/kilroybot/assets.git
     update = rebase

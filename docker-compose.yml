@@ -1,4 +1,22 @@
 services:
+  kilroyweb:
+    extends:
+      file: ./kilroyweb.yml
+      service: kilroyweb
+    image: "${KILROYWEB_IMAGE:-kilroybot/kilroyweb}"
+    build: "${KILROYWEB_PATH:-./kilroyweb}"
+    depends_on:
+      - grpc-web-proxy
+
+  grpc-web-proxy:
+    extends:
+      file: ./grpc-web-proxy.yml
+      service: grpc-web-proxy
+    image: "${GRPC_WEB_PROXY_IMAGE:-kilroybot/grpc-web-proxy}"
+    build: "${GRPC_WEB_PROXY_PATH:-./grpc-web-proxy}"
+    depends_on:
+      - cilroy
+
   cilroy:
     extends:
       file: ./cilroy.yml

@@ -1,0 +1,9 @@
+services:
+  kilroyweb:
+    image: "${KILROYWEB_IMAGE:-ghcr.io/kilroybot/kilroyweb}:${KILROYWEB_TAG:-latest}"
+    ports:
+      - "${KILROYWEB_PUBLISHED_PORT:-14000}:14000"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    environment:
+      - "KILROYWEB_API_URL=${KILROYWEB_API_URL:-http://grpc-web-proxy:13000}"

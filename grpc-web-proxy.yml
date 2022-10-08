@@ -1,0 +1,10 @@
+services:
+  grpc-web-proxy:
+    image: "${GRPC_WEB_PROXY_IMAGE:-ghcr.io/kilroybot/grpc-web-proxy}:${GRPC_WEB_PROXY_TAG:-latest}"
+    ports:
+      - "${GRPC_WEB_PROXY_PUBLISHED_PORT:-13000}:13000"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    environment:
+      - "GRPC_WEB_PROXY_TARGET_HOST=${GRPC_WEB_PROXY_TARGET_HOST:-cilroy}"
+      - "GRPC_WEB_PROXY_TARGET_PORT=${GRPC_WEB_PROXY_TARGET_PORT:-12000}"

@@ -28,9 +28,59 @@
     url = https://github.com/kilroybot/kilroy-module-huggingface.git
     update = rebase
 
+[submodule "kilroy-module-pytorch-py-sdk"]
+	path = kilroy-module-pytorch-py-sdk
+    url = https://github.com/kilroybot/kilroy-module-pytorch-py-sdk.git
+    update = rebase
+
+[submodule "kilroy-module-server-py-sdk"]
+	path = kilroy-module-server-py-sdk
+    url = https://github.com/kilroybot/kilroy-module-server-py-sdk.git
+    update = rebase
+
+[submodule "kilroy-module-client-py-sdk"]
+	path = kilroy-module-client-py-sdk
+    url = https://github.com/kilroybot/kilroy-module-client-py-sdk.git
+    update = rebase
+
+[submodule "kilroy-module-py-shared"]
+	path = kilroy-module-py-shared
+    url = https://github.com/kilroybot/kilroy-module-py-shared.git
+    update = rebase
+
+[submodule "kilroy-face-server-py-sdk"]
+	path = kilroy-face-server-py-sdk
+    url = https://github.com/kilroybot/kilroy-face-server-py-sdk.git
+    update = rebase
+
+[submodule "kilroy-face-client-py-sdk"]
+	path = kilroy-face-client-py-sdk
+    url = https://github.com/kilroybot/kilroy-face-client-py-sdk.git
+    update = rebase
+
+[submodule "kilroy-face-py-shared"]
+	path = kilroy-face-py-shared
+    url = https://github.com/kilroybot/kilroy-face-py-shared.git
+    update = rebase
+
+[submodule "kilroy-server-py-utils"]
+	path = kilroy-server-py-utils
+    url = https://github.com/kilroybot/kilroy-server-py-utils.git
+    update = rebase
+
 [submodule "proto"]
 	path = proto
     url = https://github.com/kilroybot/proto.git
+    update = rebase
+
+[submodule "research"]
+	path = research
+    url = https://github.com/kilroybot/research.git
+    update = rebase
+
+[submodule "kilroyplot"]
+	path = kilroyplot
+    url = https://github.com/kilroybot/kilroyplot.git
     update = rebase
 
 [submodule "assets"]

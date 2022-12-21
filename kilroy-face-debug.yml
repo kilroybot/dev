@@ -1,0 +1,11 @@
+services:
+  kilroy-face-debug:
+    image: "${KILROY_FACE_DEBUG_IMAGE:-ghcr.io/kilroybot/kilroy-face-debug}:${KILROY_FACE_DEBUG_TAG:-latest}"
+    ports:
+      - "${KILROY_FACE_DEBUG_PUBLISHED_PORT:-9999}:9999"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    environment:
+      - "KILROY_FACE_DEBUG_STATE_DIRECTORY=${KILROY_FACE_DEBUG_STATE_DIRECTORY:-/etc/kilroy-face-debug}"
+    volumes:
+      - kilroy-face-debug:/etc/kilroy-face-debug

@@ -23,6 +23,11 @@
     url = https://github.com/kilroybot/kilroy-face-twitter.git
     update = rebase
 
+[submodule "kilroy-face-reddit"]
+	path = kilroy-face-reddit
+    url = https://github.com/kilroybot/kilroy-face-reddit.git
+    update = rebase
+
 [submodule "kilroy-face-debug"]
 	path = kilroy-face-debug
     url = https://github.com/kilroybot/kilroy-face-debug.git

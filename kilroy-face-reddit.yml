@@ -1,0 +1,16 @@
+services:
+  kilroy-face-reddit:
+    image: "${KILROY_FACE_REDDIT_IMAGE:-ghcr.io/kilroybot/kilroy-face-reddit}:${KILROY_FACE_REDDIT_TAG:-latest}"
+    ports:
+      - "${KILROY_FACE_REDDIT_PUBLISHED_PORT:-10002}:10002"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    environment:
+      - "KILROY_FACE_REDDIT_STATE_DIRECTORY=${KILROY_FACE_REDDIT_STATE_DIRECTORY:-/etc/kilroy-face-reddit}"
+      - "KILROY_FACE_REDDIT_FACE__CLIENT_ID=${KILROY_FACE_REDDIT_FACE__CLIENT_ID}"
+      - "KILROY_FACE_REDDIT_FACE__CLIENT_SECRET=${KILROY_FACE_REDDIT_FACE__CLIENT_SECRET}"
+      - "KILROY_FACE_REDDIT_FACE__REFRESH_TOKEN=${KILROY_FACE_REDDIT_FACE__REFRESH_TOKEN}"
+      - "KILROY_FACE_REDDIT_FACE__USER_AGENT=${KILROY_FACE_REDDIT_FACE__USER_AGENT}"
+      - "KILROY_FACE_REDDIT_FACE__SUBREDDIT=${KILROY_FACE_REDDIT_FACE__SUBREDDIT}"
+    volumes:
+      - kilroy-face-reddit:/etc/kilroy-face-reddit
